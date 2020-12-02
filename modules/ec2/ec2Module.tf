@@ -27,7 +27,4 @@ data "aws_ami" "app_ami" {
     values = ["amzn2-ami-hvm*"]
 
 }
-
-locals {
-
 }
