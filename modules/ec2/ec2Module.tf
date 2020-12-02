@@ -8,12 +8,15 @@ module "ec2_cluster" {
   instance_type = var.instance_type
   subnet_id              = "subnet-bbc9bdf7"
 
-  tags = {
-    Terraform   = "true"
-    Name = "eeeeee"
-  }
+  tags = local.common_tags
 }
 
+locals {
+  common_tags = {
+    Terraform = "true"
+    Name = "eeee"
+  }
+}
 
 data "aws_ami" "app_ami" {
   most_recent = true
@@ -22,5 +25,9 @@ data "aws_ami" "app_ami" {
   filter {
     name   = "name"
     values = ["amzn2-ami-hvm*"]
-  }
+
+}
+
+locals {
+
 }
